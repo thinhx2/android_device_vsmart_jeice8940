@@ -1,1 +1,1 @@
-# android_device_vsmart_jeice8940
+TWRP_vsmart_jeice8940

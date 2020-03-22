@@ -1,0 +1,2 @@
+add_lunch_combo omni_jeice8940-eng
+add_lunch_combo omni_jeice8940-userdebug
