@@ -1,3 +1,5 @@
+# Device path
+DEVICE_PATH := device/vsmart/jeice8940
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES :=true
@@ -11,8 +13,8 @@ TARGET_BOARD_PLATFORM := msm8937
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
 
 # Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+#TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+#TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 #Architecture
 TARGET_ARCH := arm
@@ -41,21 +43,18 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # TWRP specific build flags
 TW_DEVICE_VERSION := 1_thinhx2
-TW_THEME := portrait_hdpi
+DEVICE_RESOLUTION := 720x1440
+DEVICE_SCREEN_WIDTH := 720
+DEVICE_SCREEN_HEIGHT := 1440
 RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TW_NO_REBOOT_BOOTLOADER := true
-TW_HAS_DOWNLOAD_MODE := true
-TW_EXCLUDE_SUPERSU := true
-TW_MAX_BRIGHTNESS := 255
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-TW_CRYPTO_USE_SYSTEM_VOLD := true
-TW_IGNORE_MISC_WIPE_DATA := true
-TW_CRYPTO_USE_SYSTEM_VOLD := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_NTFS_3G := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-
-#speed up wipe
-BOARD_SUPPRESS_SECURE_ERASE := true
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+TW_MAX_BRIGHTNESS := 255
+TW_THEME := portrait_hdpi
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_USE_TOOLBOX := true
